@@ -1,0 +1,24 @@
+
+# Emily Oldham
+# makefile
+
+
+all: makex makexc initial
+
+makex: main.o
+	gcc main.o -o makex -lsense
+makexc: main2.o
+	gcc main2.o -o makexc -lsense
+initial: main3.o
+	gcc main3.o -o initial -lsense
+main.o: main.c
+	gcc -c main.c 
+main2.o: main2.c
+	gcc -c main2.c
+main3.o: main3.c
+	gcc -c main3.c
+clean:
+	rm -f makex *.o
+	rm -f makexc *.o
+	rm -f initial *.o
+
