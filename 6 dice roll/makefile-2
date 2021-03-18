@@ -1,0 +1,17 @@
+# Emily Oldham
+# 4/16/20
+# makeFile for Dice
+
+all: diceRoll
+
+diceRoll: main.o dice.o
+	gcc main.o dice.o main.h -o diceRoll -lsense -lm
+
+main.o: main.c 
+	gcc -c main.c 
+
+dice.o: dice.c
+	gcc -c dice.c
+
+clean: 
+	rm  -f  diceRoll *.o 
