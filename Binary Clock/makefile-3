@@ -1,0 +1,11 @@
+# Emily Oldham
+# makefile
+# 4/20/2020
+# This file creates an executable named clock
+
+clock: main.o
+	gcc main.o -o clock -lsense -lm
+main.o: main.c
+	gcc -c main.c
+clean: 
+	rm -f clock *.o
